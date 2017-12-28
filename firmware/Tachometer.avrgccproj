@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>5.0</ProjectVersion>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATmega168</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFile>$(MSBuildProjectName).elf</OutputFile>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <UseGlobalToolchain>False</UseGlobalToolchain>
+    <ToolchainDirPath>C:\WinAVR-20100110\bin</ToolchainDirPath>
+    <MakeDirPath>C:\WinAVR-20100110\utils\bin</MakeDirPath>
+    <GlobalToolchainPath>C:\Program Files (x86)\Atmel\AVR Studio 5.0\AVR ToolChain\bin</GlobalToolchainPath>
+    <AvrGccProjectExtensions>
+    </AvrGccProjectExtensions>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <AssemblyName>Tachometer</AssemblyName>
+    <Name>Tachometer</Name>
+    <RootNamespace>Tachometer</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>F_CPU=16000000UL</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>..\usbdrv</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.UseShortCalls>True</avrgcc.compiler.optimization.UseShortCalls>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-gdwarf-2 -std=gnu99 </avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
+        <avrgcc.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avrgcc.linker.optimization.PutReadOnlyDataInWritableDataSection>
+        <avrgcc.linker.optimization.RelaxBranches>True</avrgcc.linker.optimization.RelaxBranches>
+        <avrgcc.assembler.general.AssemblerFlags>-Wall -gdwarf-2 -std=gnu99    -DF_CPU=16000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums</avrgcc.assembler.general.AssemblerFlags>
+      </AvrGcc>
+    </ToolchainSettings>
+    <MemorySettings>
+      <MemorySegments>
+        <InitialStack IsEnabled="0">
+          <Address>0x400</Address>
+        </InitialStack>
+      </MemorySegments>
+    </MemorySettings>
+    <GenerateHexFile>True</GenerateHexFile>
+    <GenerateMapFile>True</GenerateMapFile>
+    <GenerateListFile>True</GenerateListFile>
+    <GenerateEepFile>True</GenerateEepFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>F_CPU=16000000UL</Value>
+          </ListValues>
+        </avrgcc.compiler.symbols.DefSymbols>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>..\usbdrv</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.compiler.miscellaneous.OtherFlags>-gdwarf-2 -std=gnu99 </avrgcc.compiler.miscellaneous.OtherFlags>
+        <avrgcc.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>D:\vhosts\Arduino\vUsb\libusb-win32-bin-1.2.6.0\include\</Value>
+            <Value>D:\vhosts\Arduino\vUsb\libusb-win32-bin-1.2.6.0\lib\gcc\</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.LibrarySearchPaths>
+        <avrgcc.assembler.general.AssemblerFlags>-Wall -gdwarf-2 -std=gnu99    -DF_CPU=16000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums</avrgcc.assembler.general.AssemblerFlags>
+        <avrgcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>..\usbdrv</Value>
+          </ListValues>
+        </avrgcc.assembler.general.IncludePaths>
+      </AvrGcc>
+    </ToolchainSettings>
+    <MemorySettings>
+      <MemorySegments>
+        <InitialStack IsEnabled="0">
+          <Address>0x400</Address>
+        </InitialStack>
+      </MemorySegments>
+    </MemorySettings>
+    <GenerateHexFile>True</GenerateHexFile>
+    <GenerateMapFile>True</GenerateMapFile>
+    <GenerateListFile>True</GenerateListFile>
+    <GenerateEepFile>True</GenerateEepFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Tachometer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Folder Include="usbdrv" />
+    <Compile Include="usbdrv\usbconfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="usbdrv\oddebug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="usbdrv\usbconfig-prototype.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="usbdrv\usbdrv.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="usbdrv\usbportability.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="usbdrv\oddebug.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="usbdrv\usbdrv.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="usbdrv\usbdrvasm.S">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\AvrGCC.targets" />
+</Project>
