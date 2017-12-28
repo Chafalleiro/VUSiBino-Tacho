@@ -1,0 +1,6 @@
+22 November 2017
+   released version 1.0.0 of Tachometer_control
+
+     Change log:
+        -New: First launch of alpha
+
